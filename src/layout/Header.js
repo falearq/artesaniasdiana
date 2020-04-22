@@ -4,17 +4,21 @@ import {Paleta} from '../Colors.js';
 import logo from '../img/logo.svg';
 import headermotive from '../img/headermotive.png';
 import { NavLink,Link} from 'react-router-dom';
-
-import About from '../pages/About';
-import Shop from '../pages/Shop';
-import Contact from '../pages/Contact';
-import Home from '../pages/Home';
+import botonmenu from '../img/botonmenu.svg';
+import botonmenuhover from '../img/botonmenuhover.svg';
+import botonmenuclose from '../img/botonmenuclose.svg';
+import botonmenuclosehover from '../img/botonmenuclosehover.svg';
 
 
 const Header = (props) => {
     return(
     <HeaderWrap>
-    <Link to='/' ><img alt='Logotipo Artesanìas Diana'src={logo} height='80px'></img></Link>
+        <Link to='/' ><img alt='Logotipo Artesanìas Diana'src={logo} height='80px'></img></Link>
+        <img className='motive' alt='Motivo haciendo notar la división entre encabezado y contenido' src={headermotive}></img> 
+        
+        <input type="checkbox" id="activadorMenu"/>
+        <label className="trans" htmlFor="activadorMenu" id="botonMenu"></label>
+        
         <nav>
           <ul style={{ }}>
             <li><NavLink activeClassName='activo' to="/" >Home</NavLink></li>
@@ -25,7 +29,7 @@ const Header = (props) => {
 
           </ul>
         </nav>
-        <img className='motive' alt='Motivo haciendo notar la división entre encabezado y contenido' src={headermotive}></img>
+        
         </HeaderWrap>
         
         )        
@@ -34,9 +38,8 @@ const HeaderWrap= styled.div`
 
 font-family: 'MyWebFont', Caviar Dreams, sans-serif;
 font-weight: bold;
-background: ${Paleta.primarybg};
-display: inline-flex;
-
+background-color: ${Paleta.primarybg};
+display: flex;
 color:${Paleta.primary};
 padding: 1em;
 width:100%;
@@ -47,10 +50,7 @@ z-index:10;
 transition: ease-in-out 1s;
 
 
-img{
-    margin-left:3%;
 
-}
 nav>ul>li>a{
     text-decoration: none;
     color:${Paleta.primary};
@@ -71,22 +71,81 @@ nav{
    
 }
 nav>ul>li{
+   
         
-    display:inline;
+    display:inline-flex;
     padding: 1em;
 }
 
 .motive{
 
-position: absolute;
+
+display:flex;
 margin-top:6em;
-height:36%;
-margin-left: 1.2%;
+width:100%;
+margin-left:-10em;
+
+
 
 
 }
 .activo{
     text-decoration:underline;
 }
+
+@media only screen and (max-width:600px) {
+  nav {
+    background-color: ${Paleta.primarybg};
+		height: 23vh;
+		width: 8em;
+    right: -8em;
+    z-index:1;
+  }
+  nav>ul>li{
+    background-color: ${Paleta.primarybg};
+    padding: .8em;
+  }
+
+  #activadorMenu{
+	display: none;
+	
+}
+
+#botonMenu{
+  
+  background-image: url(${botonmenu});
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size:50%;
+	height: 6em;
+	position: fixed;
+	top: 0;
+	right: 0;
+  width: 6em;
+  z-index:1;
+
+}
+
+#botonMenu:hover{
+  background-image: url(${botonmenuhover});
+  z-index:1;
+}
+
+ #activadorMenu:checked + #botonMenu{
+	background-image: url(${botonmenuclose});
+  z-index:1;
+
+}
+
+ #activadorMenu:checked + #botonMenu:hover{
+  background-image: url(${botonmenuclosehover});
+	
+}
+
+ #activadorMenu:checked + #botonMenu + nav{
+	right: 0;
+
+}}           
+        
 `
 export default Header;

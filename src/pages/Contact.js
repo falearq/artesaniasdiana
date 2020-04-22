@@ -17,11 +17,11 @@ const Contact = () => {
           <img alt='Imagen de about de artesanías de Artesanías Diana'src={contact}></img>
         </div>
         <div className='right'>
-           <Formik initialValues={{ email: '', mensaje: '' }}
+           <Formik classname='formik' initialValues={{ email: '', text: '' }}
       validate={values => {
         const errors = {};
         if (!values.email) {
-          errors.email = 'Required';
+          errors.email = 'Requerido';
         } else if (
           !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
         ) {
@@ -47,6 +47,9 @@ const Contact = () => {
         /* and other goodies */
       }) => (
         <form onSubmit={handleSubmit}>
+          <h1>Contacto</h1>
+          <br></br>
+          <h2>E-mail</h2>
           <input
             type="email"
             name="email"
@@ -54,17 +57,21 @@ const Contact = () => {
             onBlur={handleBlur}
             value={values.email}
           />
+          
           {errors.email && touched.email && errors.email}
+          <br></br>
+          <h2>Mensaje</h2>
           <input
-            type="password"
-            name="password"
+            type="text"
+            name="text"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.password}
+            value={values.text}
           />
-          {errors.password && touched.password && errors.password}
+          {errors.text && touched.text && errors.text}
+          <br></br>
           <button type="submit" disabled={isSubmitting}>
-            Submit
+            Enviar
           </button>
         </form>
       )}
@@ -79,30 +86,92 @@ font-family: 'MyWebFont', Caviar Dreams, sans-serif;
 font-weight: bold;
 background: ${Paleta.primarybg};
 color:${Paleta.primary};
-height:100vh;
+margin-top:20vh;
+height:80vh;
 width:100vw;
-
 display:flex;
 flex-wrap:wrap;
 
 
-.left{  width:50%;
-margin-top:15em;
+.left{  width:50vw;
+  margin-top:3%;
+
 }
 
 .right{
    
-    width:30%;
-    margin-top:15em;
+    width:30vw;
+    margin-top:5%;
+    margin-left:0%;
     text-align: right;
+    
     }
 img{
-  repeat: no-repeat;
-  margin-left:7em;
-   height:350px;
+ 
+
+   max-width:80%;
   
  
 }
+button{
+  background-color: ${Paleta.primary};
+  color:white;
+  border-radius:3em;
+}
+input{
+  border-radius:3em;
+  height:3em;
+  padding:1em;
+  box-shadow: none;
+}
+input[type='text']{
+  
+  height:8em;
+
+}
+form{
+  padding:1em;
+  width:80%;
+}
+@media only screen and (max-width:600px) {
+.left{ 
+ 
+     width:100vw;
+    
+    }
+
+.right{
+    width:90vw;
+    padding:1em;
+    margin-left:10%;
+  
+    
+    }
+
+img{
+
+  
+    margin-top: 0;
+    margin-left: 0; 
+}
+.wrap{
+    flex-wrap:wrap;
+}
+input{
+  border-radius:3em;
+  height:3em;
+  padding:1em;
+  box-shadow: none;
+  width:20em;
+}
+input[type='text']{
+  
+  height:8em;
+
+}
+            
+}
 `
+
 
 export default Contact;

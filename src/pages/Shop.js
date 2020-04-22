@@ -55,7 +55,7 @@ const Articulo = styled.article`
       display:flex;
     justify-content:center;
     align-items:center;
-    width:70%;
+    max-width:70%;
   
         
     }
@@ -69,10 +69,14 @@ const Articulo = styled.article`
         margin-top:1em;
         text-align:center
     }
+    @media only screen and (max-width:600px) {
+        width:80%;
+        margin-left:10%;
+    }
 `
 const ImgWrap = styled.div`
 
-    height: 100%;
+    height: 60%;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -85,10 +89,16 @@ const Wrap  = styled.section`
 font-weight: bold;
 background: ${Paleta.primarybg};
 color:${Paleta.primary};
-margin-top:100px;
+margin-top:20vh;
+height:80vh;
 
 
 display:flex;
 flex-wrap:wrap;
+h1{
+    margin-top:5vh;
+    margin-left:5vw;
+}
 `
+
 export default Shop;

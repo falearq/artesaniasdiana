@@ -4,12 +4,13 @@ import Header from '.././layout/Header';
 import home from '../img/home.png';
 import styled from 'styled-components';
 import {Paleta} from '../Colors.js';
+import './style.css'
 
 const Home = () => {
     return(
     <div>
       <Header/>
-      <Wrap>
+      <Wrap className='wrap'>
       <div className='left'>
           <h2>En este sitio encontrarás:</h2>
           <br/>
@@ -22,7 +23,7 @@ const Home = () => {
           </ul>
         </div>
         <div className='right'>
-          <img alt='Imagen de home de artesanías de Artesanías Diana'src={home}></img>
+          <img className='home-img'alt='Imagen de home de artesanías de Artesanías Diana'src={home}></img>
         </div>
         </Wrap>
     </div>
@@ -34,30 +35,14 @@ font-family: 'MyWebFont', Caviar Dreams, sans-serif;
 font-weight: bold;
 background: ${Paleta.primarybg};
 color:${Paleta.primary};
-height:100vh;
+margin-top:20vh;
+height:80vh;
 width:100vw;
 position:fixed;
 display: flex; 
+flex-wrap:no-wrap;
 
 
-.left{   margin-top:20em;
-    margin-left:5em;
-     width:50%;
-    }
 
-  
-  
-}
-.right{
-    width:50%;
-    
-    }
-
-img{
-
-   height:700px;
-   margin-top: 50px; 
-    margin-left: -150px; 
-}
 `
 export default Home;

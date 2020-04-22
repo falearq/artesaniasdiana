@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '.././layout/Header';
-import about from '../img/about.png';
+
 import styled from 'styled-components';
 import {Paleta} from '../Colors.js';
 import faq from '../img/faq.png';
@@ -13,8 +13,10 @@ const Faq = () => {
       <Header/>
       <FaqWrap>
       <div className='left'>
-          <h2>¿Quiénes somos?</h2>
-          <h3>Artesanías Diana</h3>
+          <h2>F.A.Q. (Preguntas Frecuentes)</h2>
+          <br></br>
+          <h3>1.¿Dónde conseguir las artesanías de <i>Artesanías Diana</i>?</h3>
+          <hr></hr>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
           </p>
         </div>
@@ -30,30 +32,55 @@ font-family: 'MyWebFont', Caviar Dreams, sans-serif;
 font-weight: bold;
 background: ${Paleta.primarybg};
 color:${Paleta.primary};
-height:100vh;
+margin-top:20vh;
+height:80vh;
 width:100vw;
 
 display:flex;
 flex-wrap:wrap;
 
 
-.left{  width:50%;
-margin-top:15em;
-margin-left:7em;
+.left{  width:40%;
+
+margin-left:10%;
 }
 
 .right{
    
     width:30%;
-    margin-top:15em;
+ 
   
     }
 img{
-  repeat: no-repeat;
-  margin-left:7em;
-   height:350px;
+
+   max-width:120%;
   
  
+}
+@media only screen and (max-width:600px) {
+.left{ 
+ 
+     width:100vw;
+     margin-right:8%;
+    
+    }
+
+.right{
+    width:90vw;
+    padding:1em;
+  
+  
+    
+    }
+
+img{
+
+  
+    margin-top: 0;
+    margin-left: 0; 
+}
+
+            
 }
 `
 

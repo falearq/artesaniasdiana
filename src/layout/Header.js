@@ -16,7 +16,7 @@ const Header = (props) => {
         <Link to='/' ><img alt='Logotipo Artesanìas Diana'src={logo} height='80px'></img></Link>
         <img className='motive' alt='Motivo haciendo notar la división entre encabezado y contenido' src={headermotive}></img> 
         
-        <input type="checkbox" id="activadorMenu"/>
+        <input type="checkbox" id="activadorMenu"></input>
         <label className="trans" htmlFor="activadorMenu" id="botonMenu"></label>
         
         <nav>
@@ -39,15 +39,16 @@ const HeaderWrap= styled.div`
 font-family: 'MyWebFont', Caviar Dreams, sans-serif;
 font-weight: bold;
 background-color: ${Paleta.primarybg};
-display: flex;
+display: grid;
 color:${Paleta.primary};
 padding: 1em;
-width:100%;
+width:100vw;
+height: 8em;
 position:fixed;
 top:0;
 left:0;
 z-index:10;
-transition: ease-in-out 1s;
+
 
 
 
@@ -66,7 +67,7 @@ nav{
     position:fixed;
     margin-top: 2.5em;
     right: 0;
-    height: 140px;
+    
     width:600px;
    
 }
@@ -79,11 +80,9 @@ nav>ul>li{
 
 .motive{
 
-
+margin-top:2%;
 display:flex;
-margin-top:6em;
 width:100%;
-margin-left:-10em;
 
 
 
@@ -92,11 +91,15 @@ margin-left:-10em;
 .activo{
     text-decoration:underline;
 }
+  #activadorMenu{
+	display: none;
+	
+}
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:790px) {
   nav {
     background-color: ${Paleta.primarybg};
-		height: 23vh;
+		
 		width: 8em;
     right: -8em;
     z-index:1;

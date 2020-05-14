@@ -30,56 +30,66 @@ font-family: 'MyWebFont', Caviar Dreams, sans-serif;
 font-weight: bold;
 background: ${Paleta.primarybg};
 color:${Paleta.primary};
-margin-top:20vh;
+margin-top:10vh;
 height:80vh;
 width:100vw;
 display:flex;
 flex-wrap:wrap;
+flex-flow:row;
+font-size:min(max(1em,2em)1em);
 
 
-.left{  width:50vw;
-  margin-top:3%;
+
+
+
+.left{  
+  display:flex;
+  width:50%;
+  margin-top:10%;
+  justify-content:center;
+  align-items:center;
+  margin-left:4%;
 
 }
 
 .right{
-   
-    width:30vw;
+  display:flex;
+  flex-flow:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+    width:50%;
     margin-top:15%;
-    margin-left:0%;
-    text-align: right;
+    margin-right:5%;
+    
+    
     }
 img{
  
-
-   max-width:90%;
+  
+   max-width:80%;
   
  
 }
-@media only screen and (max-width:600px) {
+p{
+  
+  width: 70%;
+}
+@media only screen and (max-width:790px) {
+  flex-flow:column;
+  margin-top:20vh;
 .left{ 
  
-     width:100vw;
-    
+     width:100%;
+     margin-left:0;
     }
 
 .right{
-    width:90vw;
+    width:100%;
     padding:1em;
-    margin-left:4%;
   
     
     }
-
-img{
-
-  
-    margin-top: 0;
-    margin-left: 0; 
-}
-.wrap{
-    flex-wrap:wrap;
-}
             
 }
 `

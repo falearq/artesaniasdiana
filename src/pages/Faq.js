@@ -21,67 +21,67 @@ const Faq = () => {
           </p>
         </div>
         <div className='right'>
-          <img alt='Imagen de faq de artesanías de Artesanías Diana'src={faq}></img>
+          <img className='trans' alt='Imagen de faq de artesanías de Artesanías Diana'src={faq}></img>
         </div>
         </FaqWrap>
     </div>
     )
 }
 const FaqWrap= styled.div`
-font-family: 'MyWebFont', Caviar Dreams, sans-serif;
-font-weight: bold;
-background: ${Paleta.primarybg};
-color:${Paleta.primary};
 margin-top:20vh;
 height:80vh;
 width:100vw;
 
 display:flex;
 flex-wrap:wrap;
-
-
-.left{  width:40%;
-
-margin-left:10%;
-}
-
-.right{
-   
-    width:30%;
- 
-  
-    }
-img{
-
-   max-width:120%;
-  
- 
-}
-@media only screen and (max-width:600px) {
+font-family: 'MyWebFont', Caviar Dreams, sans-serif;
+font-weight: bold;
+background: ${Paleta.primarybg};
+color:${Paleta.primary};
+flex-flow:row;
+font-size:min(max(1em,2em)1em);
 .left{ 
- 
-     width:100vw;
-     margin-right:8%;
-    
-    }
+  margin-top:0;
+   
+display:flex;
+flex-flow:column;
+width:30%;
+justify-content:center;
+align-items:center;
+text-align:center;
+margin-left:10%;
+
+
+}
 
 .right{
-    width:90vw;
-    padding:1em;
-  
-  
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:50%;
+    margin-left:10%;
     
-    }
-
-img{
-
+ 
   
-    margin-top: 0;
-    margin-left: 0; 
+    }
+img{
+  max-width:80% ;
+  
+}
+@media only screen and (max-width:790px) {
+flex-flow:column;
+.left{
+  align-self:center;
+  margin-top:10%;
+  width:80%;
+  margin-left:0;
+}
+.right{
+  width:100%;
+  margin-left:0;
+}
 }
 
-            
-}
 `
 
 export default Faq;

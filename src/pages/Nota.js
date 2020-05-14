@@ -23,51 +23,76 @@ const Nota = () => {
         <Wrap>
         <Header/>
         
+            <div className='left'>
             <h1>{notaBlog.fields.titulo}</h1>
-            <ImgWrap>
-                            <img src={notaBlog.fields.imagenDestacada.fields.file.url} alt=""/>
-            </ImgWrap>
-            <div
+        
+                            <img className='producto' src={notaBlog.fields.imagenDestacada.fields.file.url} alt=""/>
+                            </div>
+            <div className='right'
                 dangerouslySetInnerHTML={
                     {__html:crearHTML(notaBlog.fields.content)}
                 }
             >
             </div>
+          
         </Wrap>
     )
 }
 
 const Wrap  = styled.section`
+margin-top:30vh;
+height:80vh;
+width:100vw;
+
+display:flex;
+flex-wrap:wrap;
 font-family: 'MyWebFont', Caviar Dreams, sans-serif;
 font-weight: bold;
 background: ${Paleta.primarybg};
 color:${Paleta.primary};
-margin-top:20vh;
-height:80vh;
-
-
+flex-flow:row;
+font-size:min(max(1em,2em)1em);
+.left{ 
+  margin-top:0;
+   
 display:flex;
-flex-wrap:wrap;
-h1{
-    margin-top:5vh;
-    margin-left:5vw;
-}
-img{
-      display:flex;
-    justify-content:center;
-    align-items:center;
-    max-width:70%;
-  
-        
-    }
-`
-const ImgWrap = styled.div`
+flex-flow:column;
+width:50%;
+justify-content:center;
+align-items:center;
 
-    height: 60%;
+
+
+
+}
+
+.right{
     display:flex;
-    justify-content:center;
+    flex-flow:column;
     align-items:center;
-    overflow:hidden;
-`;
+    margin-top:10em;
+    width:50%;
+    
+ 
+  
+    }
+.producto{
+  max-width:60% ;
+  
+}
+@media only screen and (max-width:790px) {
+    margin-top:15vh;
+flex-flow:column;
+.left{
+  margin-top:10%;
+  width:100%;
+}
+.right{
+  width:100%;
+}
+}
+
+`
+
 
 export default Nota;

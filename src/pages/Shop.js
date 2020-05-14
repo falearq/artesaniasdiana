@@ -95,8 +95,9 @@ height:80vh;
 
 display:flex;
 flex-wrap:wrap;
+font-size:min(max(1em,2em)1em);
 h1{
-    margin-top:5vh;
+    margin-top:10vh;
     margin-left:5vw;
 }
 `

@@ -57,7 +57,7 @@ const Contact = () => {
             onBlur={handleBlur}
             value={values.email}
           />
-          
+          <br></br>
           {errors.email && touched.email && errors.email}
           <br></br>
           <h2>Mensaje</h2>
@@ -86,26 +86,50 @@ font-family: 'MyWebFont', Caviar Dreams, sans-serif;
 font-weight: bold;
 background: ${Paleta.primarybg};
 color:${Paleta.primary};
-margin-top:20vh;
+margin-top:10vh;
 height:80vh;
 width:100vw;
 display:flex;
 flex-wrap:wrap;
+flex-flow:row;
+font-size:min(max(1em,2em)1em);
 
 
-.left{  width:50vw;
-  margin-top:3%;
+
+
+.left{  
+  display:flex;
+  width:50%;
+  margin-top:10%;
+  justify-content:center;
+  align-items:center;
 
 }
 
 .right{
-   
-    width:30vw;
-    margin-top:5%;
-    margin-left:0%;
-    text-align: right;
+  display:flex;
+  flex-flow:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+    width:50%;
+    margin-top:9%;
+    gap: 3em;
+    
     
     }
+img{
+ 
+
+   max-width:90%;
+  
+ 
+}
+p{
+  
+  width: 50%;
+}
+
 img{
  
 
@@ -117,12 +141,15 @@ button{
   background-color: ${Paleta.primary};
   color:white;
   border-radius:3em;
+  height:3em;
+  width:10em;
 }
 input{
   border-radius:3em;
+  border:none;
   height:3em;
   padding:1em;
-  box-shadow: none;
+  width:20em;
 }
 input[type='text']{
   
@@ -130,34 +157,28 @@ input[type='text']{
 
 }
 form{
-  padding:1em;
+  
   width:80%;
 }
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:790px) {
+  flex-flow:column;
+  margin-top:20vh;
 .left{ 
  
-     width:100vw;
+     width:100%;
     
     }
 
 .right{
-    width:90vw;
+    width:100%;
     padding:1em;
-    margin-left:10%;
+    margin-left:4%;
+
   
     
     }
 
-img{
-
-  
-    margin-top: 0;
-    margin-left: 0; 
-}
-.wrap{
-    flex-wrap:wrap;
-}
-input{
+    input{
   border-radius:3em;
   height:3em;
   padding:1em;
@@ -171,6 +192,8 @@ input[type='text']{
 }
             
 }
+            
+
 `
 
 

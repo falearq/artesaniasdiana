@@ -58,7 +58,7 @@ margin-left:10%;
     display:flex;
     justify-content:center;
     align-items:center;
-    width:50%;
+    width:45%;
     margin-left:10%;
     
  

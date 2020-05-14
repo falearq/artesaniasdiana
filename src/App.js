@@ -22,7 +22,7 @@ const App = () => {
                                 <Route exact path="/about" exact  component={About} />
                                 <Route exact path="/shop" exact component={Shop} />
                                 <Route exact path="/faq" exact component={Faq} />
-                                <Route exact path="/contact" exact component={Contact} />
+                                <Route exact path="/contact"  component={Contact} />
                                 <Route path="/nota/:id" component={Nota} />
                                 </React.Fragment>
                                
@@ -42,6 +42,9 @@ const App = () => {
                     
 
                 }
-                body{background: ${Paleta.primarybg};}
+                body{
+                    background: ${Paleta.primarybg};
+                }
+                
             `
 export default App;

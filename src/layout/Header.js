@@ -59,7 +59,7 @@ nav>ul>li>a{
 }
 nav>ul>li>a:hover{
   color:${Paleta.secondary};
-  transition: ease-in-out 1s;
+  transition: ease-in-out .8s;
 
 }
 

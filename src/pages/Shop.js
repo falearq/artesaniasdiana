@@ -23,7 +23,7 @@ const Shop = () => {
         <Header/>
     
             {notasBlog.items.map( nota =>{
-                console.log(nota)
+               
                 return(
                     <Articulo key={nota.sys.id}>
                         <ImgWrap>
@@ -48,6 +48,7 @@ const Articulo = styled.article`
     margin-right:3%;
     padding:1em;
     h2{
+        margin-top:0;
         text-align:center;
         font-size:18px;
     }
@@ -55,10 +56,19 @@ const Articulo = styled.article`
       display:flex;
     justify-content:center;
     align-items:center;
-    max-width:70%;
+    max-width:60%;
   
         
     }
+    img:hover{ 
+                    transform:scale(1.04);
+            
+                    -webkit-transition: all 1s ease-in-out;
+                    -moz-transition: all 1s ease-in-out;
+                    -ms-transition: all 1s ease-in-out;
+                    -o-transition:all 1s ease-in-out;
+                    transition:all 1s ease-in-out;
+                }
     a{
         color:red;
         text-decoration:none;
@@ -72,6 +82,9 @@ const Articulo = styled.article`
     @media only screen and (max-width:600px) {
         width:80%;
         margin-left:10%;
+    h2{
+        margin-top:1em;
+    }    
     }
 `
 const ImgWrap = styled.div`
@@ -81,6 +94,7 @@ const ImgWrap = styled.div`
     justify-content:center;
     align-items:center;
     overflow:hidden;
+    
 `;
 
 
@@ -89,7 +103,7 @@ const Wrap  = styled.section`
 font-weight: bold;
 background: ${Paleta.primarybg};
 color:${Paleta.primary};
-margin-top:20vh;
+margin-top:24vh;
 height:80vh;
 
 
@@ -100,6 +114,9 @@ h1{
     margin-top:10vh;
     margin-left:5vw;
 }
+@media only screen and (max-width:600px) {
+      margin-top:28vh;
+    }
 `
 
 export default Shop;

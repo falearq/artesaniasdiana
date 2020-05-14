@@ -17,9 +17,9 @@ const Home = () => {
           <h3>Una pequeña historia...</h3>
           
           <ul>
-          <li><a href='/shop'>Catálogo Online</a> </li>
-          <li><a href='/faq'>Preguntas más frecuentes</a></li>
-          <li><a  href='/contact'>Contacto</a></li>
+          <li><a className='home-link' href='/shop'>Catálogo Online</a> </li>
+          <li><a className='home-link' href='/faq'>Preguntas más frecuentes</a></li>
+          <li><a className='home-link' href='/contact'>Contacto</a></li>
           </ul>
         </div>
         <div className='right'>
@@ -70,7 +70,13 @@ align-items:center;
   min-width:100%;
   
 }
+.home-link{
+  transition: ease-in-out .8s;
+}
 a:visited{
+  color:${Paleta.complementaryorange}
+}
+a:hover{
   color:${Paleta.secondary}
 }
 @media only screen and (max-width:790px) {

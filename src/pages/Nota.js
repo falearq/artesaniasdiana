@@ -8,7 +8,7 @@ import Header from '.././layout/Header';
 const Nota = () => {
     const id = useParams();
     const [notaBlog, loadingNotaBlog] = useOneContentfulData(id);
-    console.log(notaBlog)
+    
     if(loadingNotaBlog){
         return(
             <Wrap>
@@ -41,7 +41,7 @@ const Nota = () => {
 
 const Wrap  = styled.section`
 margin-top:30vh;
-height:80vh;
+
 width:100vw;
 
 display:flex;
@@ -72,12 +72,13 @@ align-items:center;
     align-items:center;
     margin-top:10em;
     width:50%;
-    
+    margin-right:10%;
  
   
     }
 .producto{
-  max-width:60% ;
+    margin-top:2em;
+  max-width:50% ;
   
 }
 @media only screen and (max-width:790px) {
